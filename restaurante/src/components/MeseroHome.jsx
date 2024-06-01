@@ -72,7 +72,7 @@ function MeseroHome({ user, email }) {
                     alert('Error al editar el pedido: ' + data.message);
                 }
             } else {
-                const response = await fetch('https://de-medina-tygg.vercel.app/v1/pedidos', {
+                const response = await fetch('https://de-medina-backend.vercel.app/v1/pedidos', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

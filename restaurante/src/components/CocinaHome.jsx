@@ -11,7 +11,7 @@ function CocinaHome() {
 
     const fetchPedidos = async () => {
         try {
-            const response = await fetch('https://de-medina-tygg.vercel.app/v1/cocina');
+            const response = await fetch('https://de-medina-backend.vercel.app/v1/cocina');
             if (response.ok) {
                 const data = await response.json();
                 setPedidos(data.pedidos);
@@ -27,7 +27,7 @@ function CocinaHome() {
 
     const handleModificarEstado = async (id, nuevoEstado) => {
         try {
-            const response = await fetch(`https://de-medina-tygg.vercel.app/v1/cocina/${id}`, {
+            const response = await fetch(`https://de-medina-backend.vercel.app/v1/cocina/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'

@@ -19,7 +19,7 @@ function AdminProductos() {
   const fetchProductos = async () => {
     setLoading(true);
     try {
-      const response = await fetch('https://de-medina-tygg.vercel.app/v1/productos');
+      const response = await fetch('https://de-medina-backend.vercel.app/v1/productos');
       if (response.ok) {
         const data = await response.json();
         setProductos(data.productos);
@@ -39,7 +39,7 @@ function AdminProductos() {
       return;
     }
     try {
-      const response = await fetch('https://de-medina-tygg.vercel.app/v1/productos', {
+      const response = await fetch('https://de-medina-backend.vercel.app/v1/productos', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -68,7 +68,7 @@ function AdminProductos() {
       return;
     }
     try {
-      const response = await fetch(`https://de-medina-tygg.vercel.app/v1/productos/${updatingProductId}`, {
+      const response = await fetch(`https://de-medina-backend.vercel.app/v1/productos/${updatingProductId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -94,7 +94,7 @@ function AdminProductos() {
   const handleDelete = async (productId) => {
     if (window.confirm('¿Está seguro de eliminar este producto?')) {
       try {
-        const response = await fetch(`https://de-medina-tygg.vercel.app/v1/productos/${productId}`, {
+        const response = await fetch(`https://de-medina-backend.vercel.app/v1/productos/${productId}`, {
           method: 'DELETE'
         });
         if (response.ok) {

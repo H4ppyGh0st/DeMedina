@@ -11,7 +11,7 @@ function Form({ callback }) {
         e.preventDefault();
 
         try {
-            const response = await fetch('https://de-medina-tygg.vercel.app/v1/usuarios/login', {
+            const response = await fetch('https://de-medina-backend.vercel.app/v1/usuarios/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

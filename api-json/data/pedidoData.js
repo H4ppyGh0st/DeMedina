@@ -1,4 +1,4 @@
-// const Pedido = require('../models/pedidos');
+
 // const Producto = require('../models/Producto');
 
 
@@ -63,28 +63,6 @@ const updateEstadoPedido = async (pedidoId, estado) => {
 }
 
 
-
-// Crear una nueva venta
-const createVenta = async (numero_mesa, productos, total_venta, estado, fecha_hora, email_mesero) => {
-    const ultimoPedido = await Pedido.findOne().sort({ id: -1 }).lean();
-    const nuevoIdPedido = ultimoPedido ? ultimoPedido.id + 1 : 1;
-
-    const newPedido = new Pedido({
-        id: nuevoIdPedido,
-        numero_mesa,
-        productos,
-        total_venta,
-        estado,
-        fecha_hora,
-        email_mesero
-    });
-
-    await newPedido.save();
-    return { pedidos: [newPedido.toObject()] };
-};
-
-
-
 module.exports = {
     getAllPedidos,
     getPedidoById,
@@ -92,43 +70,4 @@ module.exports = {
     updatePedido,
     deletePedido,
     updateEstadoPedido,
-    createVenta
 };
-// // Obtener todos los pedidos
-// const getAllPedidos = async () => {
-//     const pedidos = await Pedido.find().populate('productos');
-//     return { pedidos };
-// };
-
-// // Crear un nuevo pedido
-// const createPedido = async (newPedido) => {
-//     const pedido = new Pedido(newPedido);
-//     await pedido.save();
-//     return newPedido;
-// };
-
-// // Actualizar un pedido
-// const updatePedido = async (pedidoId, updatedPedido) => {
-//     const pedido = await Pedido.findOneAndUpdate({ id: pedidoId }, updatedPedido, { new: true });
-//     return pedido;
-// };
-
-// // Eliminar un pedido
-// const deletePedido = async (pedidoId) => {
-//     const pedido = await Pedido.findOneAndDelete({ id: pedidoId });
-//     return pedido;
-// };
-
-// // Modificar estado de un pedido
-// const modifyPedidoStatus = async (pedidoId, estado) => {
-//     const pedido = await Pedido.findOneAndUpdate({ id: pedidoId }, { estado: estado }, { new: true });
-//     return pedido;
-// };
-
-// module.exports = {
-//     getAllPedidos,
-//     createPedido,
-//     updatePedido,
-//     deletePedido,
-//     modifyPedidoStatus
-// };

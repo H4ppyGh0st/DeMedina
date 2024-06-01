@@ -16,7 +16,7 @@ function AdminPedidos({ user }) {
 
     const fetchVentas = async () => {
         try {
-            const response = await fetch('https://de-medina-tygg.vercel.app/v1/ventas');
+            const response = await fetch('https://de-medina-backend.vercel.app/v1/ventas');
             if (response.ok) {
                 const data = await response.json();
                 // Mapear las ventas para mostrar solo los campos necesarios
