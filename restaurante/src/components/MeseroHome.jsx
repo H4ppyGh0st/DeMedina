@@ -25,7 +25,7 @@ function MeseroHome({ user, email }) {
 
     const fetchProductosDisponibles = async () => {
         try {
-            const response = await fetch('https://de-medina-tygg.vercel.app/v1/productos');
+            const response = await fetch('https://de-medina-backend.vercel.app/v1/productos');
             if (response.ok) {
                 const data = await response.json();
                 setProductosDisponibles(data.productos);
@@ -39,7 +39,7 @@ function MeseroHome({ user, email }) {
 
     const fetchPedidosRealizados = async () => {
         try {
-            const response = await fetch('https://de-medina-tygg.vercel.app/v1/pedidos');
+            const response = await fetch('https://de-medina-backend.vercel.app/v1/pedidos');
             if (response.ok) {
                 const data = await response.json();
                 setPedidosRealizados(data.pedidos);
@@ -55,7 +55,7 @@ function MeseroHome({ user, email }) {
         e.preventDefault();
         try {
             if (editandoPedido) {
-                const response = await fetch(`https://de-medina-tygg.vercel.app/v1/pedidos/${editandoPedido.id}`, {
+                const response = await fetch(`https://de-medina-backend.vercel.app/v1/pedidos/${editandoPedido.id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
