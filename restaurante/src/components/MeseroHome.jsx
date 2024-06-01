@@ -25,7 +25,11 @@ function MeseroHome({ user, email }) {
 
     const fetchProductosDisponibles = async () => {
         try {
-            const response = await fetch('https://de-medina-backend.vercel.app/v1/productos');
+            const response = await fetch('https://de-medina-backend.vercel.app/v1/productos',
+                {
+                    mode: 'cors'
+                }
+            );
             if (response.ok) {
                 const data = await response.json();
                 setProductosDisponibles(data.productos);
