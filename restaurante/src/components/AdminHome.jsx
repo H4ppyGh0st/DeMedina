@@ -27,8 +27,9 @@ function AdminHome({user}){
     // Función para obtener la lista de usuarios
     const fetchUsuarios = async () => {
         setLoading(true);
+        
         try {
-            const response = await fetch('http://localhost:4000/v1/usuarios');
+            const response = await fetch('https://de-medina-tygg.vercel.app/v1/usuarios');
             if (response.ok) {
                 const data = await response.json();
                 setUsuarios(data.usuarios);
@@ -45,7 +46,7 @@ function AdminHome({user}){
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:4000/v1/usuarios', {
+            const response = await fetch('https://de-medina-tygg.vercel.app/v1/usuarios', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -73,7 +74,7 @@ function AdminHome({user}){
     const handleDelete = async (userId) => {
         if (window.confirm('¿Está seguro de eliminar este usuario?')) {
             try {
-                const response = await fetch(`http://localhost:4000/v1/usuarios/${userId}`, {
+                const response = await fetch(`https://de-medina-tygg.vercel.app/v1/usuarios/${userId}`, {
                     method: 'DELETE'
                 });
                 if (response.ok) {
@@ -108,7 +109,7 @@ function AdminHome({user}){
     const handleUpdateSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`http://localhost:4000/v1/usuarios/${updatingUserId}`, {
+            const response = await fetch(`https://de-medina-tygg.vercel.app/v1/usuarios/${updatingUserId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
