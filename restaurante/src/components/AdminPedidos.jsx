@@ -15,6 +15,8 @@ function AdminPedidos({ user }) {
     }, []);
 
     const fetchVentas = async () => {
+    
+        //http://localhost:4000/v1/ventas
         try {
             const response = await fetch('https://de-medina-backend.vercel.app/v1/ventas');
             if (response.ok) {
