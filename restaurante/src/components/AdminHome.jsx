@@ -2,7 +2,7 @@
 import { Navigate, useNavigate } from "react-router-dom";
 
 import './styles/AdminHome.css';
-import NavbarAdmin from "./navbarAdmin";
+import NavbarAdmin from "./NavbarAdmin";
 import { useState ,useEffect } from "react";
 
 

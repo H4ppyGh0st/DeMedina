@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import './styles/AdminProductos.css';
-import NavbarAdmin from "./navbarAdmin";
+import NavbarAdmin from "./NavbarAdmin";
 
 function AdminProductos() {
   const navigate = useNavigate();

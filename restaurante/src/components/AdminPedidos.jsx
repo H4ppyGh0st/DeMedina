@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import './styles/AdminPedidos.css';
-import NavbarAdmin from "./navbarAdmin";
+import NavbarAdmin from "./NavbarAdmin"
 import { useState, useEffect } from "react";
 
 function AdminPedidos({ user }) {
